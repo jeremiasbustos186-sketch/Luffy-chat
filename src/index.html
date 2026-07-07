@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <!--
+    META VIEWPORT (L1): sin esto, los celulares muestran la página
+    como si tuviera 980px de ancho y las media queries no funcionan.
+    width=device-width → usa el ancho real del dispositivo
+    initial-scale=1    → no hace zoom inicial
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Chat con Luffy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!--
+    ARQUITECTURA SPA (L2):
+    Toda la app vive en UN SOLO HTML.
+    Las vistas (Home, Chat, About) se renderizan dentro de #app con JavaScript.
+    La URL cambia con history.pushState() pero nunca hay recarga de página.
+  -->
+
+  <!-- Navbar: siempre visible en todas las vistas -->
+  <header class="navbar">
+    <div class="navbar__brand">
+      <a href="/home" class="navbar__logo" data-href="/home">
+        🏴‍☠️ Monkey D. Luffy
+      </a>
+    </div>
+    <nav class="navbar__links">
+      <!-- data-href: atributo personalizado para el router (L2) -->
+      <!-- Estos links NO recargan la página — el router los intercepta -->
+      <a href="/home"  class="nav-link" data-href="/home">Inicio</a>
+      <a href="/chat"  class="nav-link" data-href="/chat">Chat</a>
+      <a href="/about" class="nav-link" data-href="/about">Acerca de</a>
+    </nav>
+    <!-- Botón hamburguesa: visible solo en mobile -->
+    <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú">
+      ☰
+    </button>
+  </header>
+
+  <!--
+    #app: el contenedor donde el router inyecta el HTML de cada vista.
+    Cuando el usuario navega a /home → app.js renderiza renderHome() acá.
+    Cuando navega a /chat → renderiza renderChat(). Y así.
+    aria-live="polite": accesibilidad — anuncia cambios de contenido a lectores de pantalla
+  -->
+  <main id="app" aria-live="polite">
+    <!-- El contenido se renderiza acá dinámicamente con JavaScript -->
+  </main>
+
+  <!--
+    type="module": necesario para usar import/export entre archivos JS.
+    app.js es el punto de entrada — importa chat.js y utils.js.
+  -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
