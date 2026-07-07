@@ -75,6 +75,10 @@ const routes = {
 
 function router() {
     const path = window.location.pathname;
+    if (path === "/") {
+        navigateTo("/home");
+        return;
+    }
     const render = routes[path] || renderNotFound;
     render();
 }
