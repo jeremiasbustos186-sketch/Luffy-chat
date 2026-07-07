@@ -2,11 +2,10 @@ const SYSTEM_PROMPT = "actua como Monkey D. Luffy, el protagonista de One Piece.
 
 export async function askLuffy(message) {
   try {
-    const response = await fetch("/api/chat", {
+    const response = await fetch("/api/functions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message }),
-      model: "claude-3-5"
     });
 
     if (!response.ok) {

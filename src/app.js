@@ -53,7 +53,7 @@ function renderChatState(state) {
     }
     if (state.status === "success") {
         const $messages = document.querySelector(".messages");
-        $messages.innerHTML = "<p>Mensajes cargados exitosamente.</p>";
+        $messages.innerHTML = `<p>${state.data.reply}</p>`;
     }
 }
 
