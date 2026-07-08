@@ -66,7 +66,7 @@ function renderChatState(state) {
         const $messages = document.querySelector(".messages");
         $messages.innerHTML = state.history.map(msg =>{
             const isUser= msg.role === "user";
-            return `<div class="message ${isUser ? "message--user" : "mesagge--luffy"}">${msg.parts[0].text}</div>`;
+            return `<div class="message ${isUser ? "message--user" : "message--luffy"}">${msg.parts[0].text}</div>`;
         }).join("");
         $messages.scrollTop = $messages.scrollHeight;
     }
