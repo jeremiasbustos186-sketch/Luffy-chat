@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 310">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#05102a"/>
+      <stop offset="100%" stop-color="#0d1f3c"/>
+    </linearGradient>
+    <linearGradient id="hat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c945"/>
+      <stop offset="100%" stop-color="#c8960c"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6c8a8"/>
+      <stop offset="100%" stop-color="#e9a07a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="rgba(200,150,12,0.18)"/>
+      <stop offset="100%" stop-color="rgba(200,150,12,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="310" fill="url(#bg)"/>
+  <ellipse cx="100" cy="155" rx="95" ry="135" fill="url(#glow)"/>
+
+  <!-- BODY - red vest -->
+  <path d="M20 310 L20 248 Q45 225 100 220 Q155 225 180 248 L180 310Z" fill="#dc2626"/>
+  <!-- White shirt center -->
+  <path d="M82 220 Q100 226 118 220 L124 270 Q100 278 76 270Z" fill="#f0f0f0"/>
+  <!-- Vest seam -->
+  <line x1="100" y1="224" x2="100" y2="272" stroke="#b91c1c" stroke-width="2"/>
+
+  <!-- NECK -->
+  <rect x="88" y="192" width="24" height="34" rx="7" fill="url(#skin)"/>
+
+  <!-- HEAD (face oval) -->
+  <ellipse cx="100" cy="160" rx="52" ry="55" fill="url(#skin)"/>
+
+  <!-- EARS -->
+  <ellipse cx="48" cy="163" rx="8" ry="11" fill="url(#skin)"/>
+  <ellipse cx="152" cy="163" rx="8" ry="11" fill="url(#skin)"/>
+
+  <!-- HAIR - black, spiky, around head -->
+  <!-- Back/top mass -->
+  <ellipse cx="100" cy="118" rx="50" ry="28" fill="#1a1a1a"/>
+  <!-- Top spikes -->
+  <ellipse cx="75" cy="108" rx="15" ry="20" fill="#1a1a1a"/>
+  <ellipse cx="100" cy="103" rx="16" ry="21" fill="#1a1a1a"/>
+  <ellipse cx="125" cy="108" rx="15" ry="20" fill="#1a1a1a"/>
+  <!-- Side hair left -->
+  <ellipse cx="52" cy="145" rx="14" ry="25" fill="#1a1a1a"/>
+  <!-- Side hair right -->
+  <ellipse cx="148" cy="145" rx="14" ry="25" fill="#1a1a1a"/>
+  <!-- Forehead hair fringe -->
+  <path d="M68 135 Q100 127 132 135 Q120 118 100 115 Q80 118 68 135Z" fill="#1a1a1a"/>
+
+  <!-- EYEBROWS -->
+  <path d="M68 147 Q80 141 91 147" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M109 147 Q120 141 132 147" stroke="#1a1a1a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- EYES (big anime style) -->
+  <!-- Left eye -->
+  <ellipse cx="81" cy="161" rx="13" ry="14" fill="white"/>
+  <circle cx="83" cy="161" r="9" fill="#1a1a1a"/>
+  <circle cx="86" cy="157" r="3.5" fill="white"/>
+  <!-- Right eye -->
+  <ellipse cx="119" cy="161" rx="13" ry="14" fill="white"/>
+  <circle cx="121" cy="161" r="9" fill="#1a1a1a"/>
+  <circle cx="124" cy="157" r="3.5" fill="white"/>
+
+  <!-- SCAR under Luffy's left eye (viewer's left) -->
+  <path d="M73 176 L85 185" stroke="#b87050" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- NOSE (tiny) -->
+  <path d="M95 178 Q100 184 105 178" stroke="#d4906a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+  <!-- HUGE SMILE (Luffy's signature grin) -->
+  <path d="M65 193 Q100 222 135 193" fill="#1a1a1a"/>
+  <path d="M65 193 Q100 212 135 193 Q118 206 100 208 Q82 206 65 193Z" fill="white"/>
+  <path d="M65 193 Q100 222 135 193" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- STRAW HAT -->
+  <!-- Brim shadow -->
+  <ellipse cx="100" cy="124" rx="85" ry="21" fill="rgba(0,0,0,0.25)"/>
+  <!-- Brim main -->
+  <ellipse cx="100" cy="121" rx="85" ry="21" fill="url(#hat)"/>
+  <ellipse cx="100" cy="121" rx="85" ry="21" fill="none" stroke="#8B6200" stroke-width="2.5"/>
+  <!-- Dome -->
+  <path d="M45 115 Q42 66 100 55 Q158 66 155 115 Q135 107 100 105 Q65 107 45 115Z" fill="url(#hat)"/>
+  <path d="M45 115 Q42 66 100 55 Q158 66 155 115" fill="none" stroke="#8B6200" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Hat texture -->
+  <path d="M60 96 Q100 87 140 96" stroke="#a87c10" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <path d="M68 106 Q100 99 132 106" stroke="#a87c10" stroke-width="1" fill="none" opacity="0.5"/>
+  <!-- Red band -->
+  <path d="M45 115 Q100 125 155 115" stroke="#ef4444" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Inner brim detail -->
+  <ellipse cx="100" cy="121" rx="60" ry="12" fill="none" stroke="#a87c10" stroke-width="1" opacity="0.45"/>
+</svg>

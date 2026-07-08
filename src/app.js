@@ -29,9 +29,8 @@ function renderChat() {
         <div class="character-panel">
             <div class="character-panel__image">
                 <img
-                    src="https://static.wikia.nocookie.net/onepiece/images/6/6b/Monkey_D._Luffy_Anime_Pre_Timeskip_Infobox.png"
+                    src="/src/luffy.svg"
                     alt="Monkey D. Luffy"
-                    onerror="this.outerHTML='<div class=\\'character-panel__emoji\\'>🏴‍☠️</div>'"
                 />
             </div>
             <div class="character-panel__info">
