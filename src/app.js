@@ -21,8 +21,11 @@ function renderChat() {
     </form>
     </div>
     `;
-    document.querySelector("#chat-form").addEventListener("submit",async (event) => {
+    document.querySelector("#chat-form").addEventListener("submit", async (event) => {
         event.preventDefault();
+        const button = document.querySelector("#chat-form button");
+        button.disabled = true;
+        button.textContent = "Enviando...";
         state.status = "loading";
         state.data = null;
         state.error = null;
@@ -32,20 +35,21 @@ function renderChat() {
         input.value = "";
         state.history.push({ role: "user", parts: [{ text: message }] });
 
-try {
-  const data = await askLuffy(message, state.history);
-  state.status = "success";
-  state.data = data;
-  state.history.push({ role: "model", parts: [{ text: data.reply }] });
-  renderChatState(state);
-} catch (error) {
-    state.history.pop();
-  state.status = "error";
-  state.error = error.message;
-  renderChatState(state);
-}
-button.disabled = false;
-button.textContent = "Enviar";
+        try {
+            const data = await askLuffy(message, state.history);
+            state.status = "success";
+            state.data = data;
+            state.history.push({ role: "model", parts: [{ text: data.reply }] });
+            renderChatState(state);
+        } catch (error) {
+            state.history.pop();
+            state.status = "error";
+            state.error = error.message;
+            renderChatState(state);
+        }
+
+        button.disabled = false;
+        button.textContent = "Enviar";
     });
 }
 
@@ -104,9 +108,6 @@ document.addEventListener("click", (event) => {
     if (!link) return;
 
     event.preventDefault();
-    const button = document.querySelector(".chat-form button");
-    button.disabled = true;
-    button.textContent = "Enviando...";
     navigateTo(link.getAttribute("data-href"));
 });
 
