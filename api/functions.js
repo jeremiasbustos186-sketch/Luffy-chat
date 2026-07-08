@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { message } = req.body;
+  const { message, history } = req.body;
 
   // Validar que venga un mensaje
   if (!message || typeof message !== "string") {
@@ -25,12 +25,7 @@ export default async function handler(req, res) {
         system_instruction: {
           parts: [{ text: SYSTEM_PROMPT }],
         },
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: message }],
-          },
-        ],
+        contents: history,
         generationConfig: {
           temperature: 0.8,
           maxOutputTokens: 500,

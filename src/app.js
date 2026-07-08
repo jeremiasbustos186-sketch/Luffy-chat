@@ -4,6 +4,7 @@ const state = {
     status: "idle",
     data: null,
     error: null,
+    history: [],
 };
 
 function renderHome() {
@@ -28,11 +29,13 @@ function renderChat() {
         renderChatState(state);
         const input = document.querySelector("#chat-form input");
         const message = input.value;
+        state.history.push({ role: "user", parts: [{ text: message }] });
 
 try {
-  const data = await askLuffy(message);
+  const data = await askLuffy(message, state.history);
   state.status = "success";
   state.data = data;
+  state.history.push({ role: "model", parts: [{ text: data.reply }] });
   renderChatState(state);
 } catch (error) {
   state.status = "error";
