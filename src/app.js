@@ -8,7 +8,13 @@ const state = {
 };
 
 function renderHome() {
-    document.getElementById("app").innerHTML = "<h1>home</h1>";
+    document.getElementById("app").innerHTML = `
+    <div class="home-view">
+        <h1>¡Bienvenido al Chat con Luffy!</h1>
+        <p>Monkey D. Luffy, el futuro Rey de los Piratas, está listo para hablar con vos.</p>
+        <a href="/chat" data-href="/chat" class="btn-chat">Ir al Chat 🏴‍☠️</a>
+    </div>
+    `;
 }
 
 function renderChat() {
@@ -75,7 +81,14 @@ function renderChatState(state) {
 
 
 function renderAbout() {
-    document.getElementById("app").innerHTML = "<h1>about</h1>";
+    document.getElementById("app").innerHTML = `
+    <div class="about-view">
+        <h1>Acerca de</h1>
+        <p>Esta aplicación fue desarrollada como Proyecto Integrador 3 del bootcamp Henry.</p>
+        <p>Utiliza Google Gemini AI para simular una conversación con Monkey D. Luffy de One Piece.</p>
+        <p>Tecnologías: HTML, CSS, JavaScript, Vercel Serverless Functions.</p>
+    </div>
+    `;
 }
 
 function renderNotFound() {
