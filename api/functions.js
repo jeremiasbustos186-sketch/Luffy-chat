@@ -47,8 +47,9 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     // Extraer el texto de la respuesta de Gemini
-    const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "No response";
+    const parts = data?.candidates?.[0]?.content?.parts ?? [];
+    const textPart = parts.find((p) => !p.thought) ?? parts[parts.length - 1];
+    const text = textPart?.text ?? "No se pudo generar una respuesta.";
 
     return res.status(200).json({ reply: text });
   } catch (error) {
