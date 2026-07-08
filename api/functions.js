@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   const SYSTEM_PROMPT =
     "Actúa como Monkey D. Luffy, el protagonista de One Piece. Responde a las preguntas de manera divertida y con un toque de humor, como lo haría Luffy en la serie. Mantén un tono amigable y entusiasta, y utiliza expresiones y frases características del personaje. Responde siempre en máximo 3 líneas.";
