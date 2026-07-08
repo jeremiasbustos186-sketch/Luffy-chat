@@ -101,6 +101,8 @@ body {
   flex: 1;
   overflow-y: auto;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-form {
@@ -115,4 +117,24 @@ body {
 
 .chat-form button {
   padding: 0.5rem 1rem;
+}
+
+.message {
+  max-width: 70%;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.message--user {
+  background-color: #4f46e5;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message--luffy {
+  background-color: #1e293b;
+  color: white;
+  align-self: flex-start;
 }

@@ -56,7 +56,11 @@ function renderChatState(state) {
     }
     if (state.status === "success") {
         const $messages = document.querySelector(".messages");
-        $messages.innerHTML = `<p>${state.data.reply}</p>`;
+        $messages.innerHTML = state.history.map(msg =>{
+            const isUser= msg.role === "user";
+            return `<div class="message ${isUser ? "message--user" : "mesagge--luffy"}">${msg.parts[0].text}</div>`;
+        }).join("");
+        $messages.scrollTop = $messages.scrollHeight;
     }
 }
 
