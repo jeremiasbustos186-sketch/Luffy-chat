@@ -89,3 +89,30 @@ body {
     gap: 0.5rem;
   }
 }
+
+.chat-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.chat-form button {
+  padding: 0.5rem 1rem;
+}
