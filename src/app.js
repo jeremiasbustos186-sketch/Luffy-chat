@@ -29,6 +29,7 @@ function renderChat() {
         renderChatState(state);
         const input = document.querySelector("#chat-form input");
         const message = input.value;
+        input.value = "";
         state.history.push({ role: "user", parts: [{ text: message }] });
 
 try {
@@ -38,10 +39,13 @@ try {
   state.history.push({ role: "model", parts: [{ text: data.reply }] });
   renderChatState(state);
 } catch (error) {
+    state.history.pop();
   state.status = "error";
   state.error = error.message;
   renderChatState(state);
 }
+button.disabled = false;
+button.textContent = "Enviar";
     });
 }
 
@@ -100,6 +104,9 @@ document.addEventListener("click", (event) => {
     if (!link) return;
 
     event.preventDefault();
+    const button = document.querySelector(".chat-form button");
+    button.disabled = true;
+    button.textContent = "Enviando...";
     navigateTo(link.getAttribute("data-href"));
 });
 
