@@ -45,6 +45,7 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
+    console.log("respuesta de gemini:", JSON.stringify(data?.candidates?.[0]?.content?.parts));
 
     // Extraer el texto de la respuesta de Gemini
     const parts = data?.candidates?.[0]?.content?.parts ?? [];
