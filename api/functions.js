@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   const body = JSON.stringify({
     system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
     contents: history,
-    generationConfig: { temperature: 0.8, maxOutputTokens: 500 },
+    generationConfig: { temperature: 0.8, maxOutputTokens: 1024 },
   });
 
   const MAX_RETRIES = 3;

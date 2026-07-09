@@ -40,6 +40,14 @@ body {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar__jolly-roger {
+  height: 28px;
+  width: auto;
 }
 
 .navbar__links {
@@ -357,8 +365,13 @@ body {
 }
 
 .home-view__icon {
-  font-size: 4rem;
   margin-bottom: 1rem;
+}
+
+.home-view__icon img {
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 4px 16px rgba(240, 180, 41, 0.4));
 }
 
 .home-view h1, .about-view h1 {
