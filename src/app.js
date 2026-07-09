@@ -11,7 +11,7 @@ const state = {
 function renderHome() {
     document.getElementById("app").innerHTML = `
     <div class="home-view">
-        <div class="home-view__icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Straw_Hats_Pirates_Jolly_Roger.svg/200px-Straw_Hats_Pirates_Jolly_Roger.svg.png" alt="Jolly Roger" /></div>
+        <div class="home-view__icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Straw_Hats_Pirates_Jolly_Roger.svg" alt="Jolly Roger" /></div>
         <h1>¡Bienvenido al Chat con Luffy!</h1>
         <p>Monkey D. Luffy, el futuro Rey de los Piratas, está listo para hablar con vos.</p>
         <p>Pregúntale sobre sus aventuras, su tripulación, o su sueño de encontrar el One Piece.</p>
